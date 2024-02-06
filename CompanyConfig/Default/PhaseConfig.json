@@ -274,5 +274,22 @@
       "- Resources (high-level explanation of core concepts)",
       "```"
     ]
+  },
+  "Party Creation": {
+    "assistant_role_name": "Party Creator",
+    "user_role_name": "Chief Executive Officer",
+    "phase_prompt": [
+      "The new user's task are listed: ",
+      "Task: \"{task}\".",
+      "As the {assistant_role}, you should write a parties.json file, which can be used to holistically get an idea on the parties interests, agenda, current situation and goals. It serves as a way to document and manage the Parties involved in the argument. For example:",
+      "parties.json",
+      "```",
+      "{",
+      " 'Party A': { 'Topic 1': 'Agenda A', 'Topic 2': 'Agenda A'},",
+      " 'Party B': { 'Topic 2': 'Agenda B', 'Topic 3': 'Agenda B'}",
+      "}",
+      "```",
+      "According to the codes and file format listed above, write a parties.json file to specify the parties participating in the argument."
+    ]
   }
 }

@@ -5,11 +5,18 @@
             "phaseType": "SimplePhase",
             "max_turn_step": 2,
             "need_reflect": "False"
+        },
+        {
+            "phase": "PriorityAnalysis2",
+            "phaseType": "SimplePhase",
+            "max_turn_step": 1,
+            "need_reflect": "False"
         }
     ],
     "recruitments": [
         "Chief Executive Officer",
         "Party Creator",
+        "Priority Analyst",
         "Counselor"
     ],
     "clear_structure": "True",

@@ -658,4 +658,24 @@ class PartyCreation(Phase):
         self.phase_env.update({"task": chat_env.env_dict['task_prompt']})
 
     def update_chat_env(self, chat_env) -> ChatEnv:
+        log_visualize(
+                "**[Software Info]**:\n\n {}".format(get_info(chat_env.env_dict['directory'], self.log_filepath)))
+        # Open the file in read mode ('r')
+        with open('stakeholders.txt', 'r') as file:
+            # Read the entire content of the file into a string
+            file_content = file.read()    
+        chat_env.env_dict['parties'] = file_content
+        return chat_env
+    
+class PriorityAnalysis2(Phase):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def update_phase_env(self, chat_env):
+        self.phase_env.update({"task": chat_env.env_dict['task_prompt'],
+                               "parties": chat_env.env_dict['parties']})
+
+    def update_chat_env(self, chat_env) -> ChatEnv:
+        log_visualize(
+                "**[Software Info]**:\n\n {}".format(get_info(chat_env.env_dict['directory'], self.log_filepath)))
         return chat_env
