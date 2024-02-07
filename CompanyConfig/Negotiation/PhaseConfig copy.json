@@ -8,21 +8,35 @@
       "Note that we must ONLY discuss the parties and do not discuss anything else! Once we all have expressed our opinion(s) and agree with the results of the discussion unanimously, any of us must actively terminate the discussion by replying with only one line, which starts with a single word <INFO>."
     ]
   },
-  "PriorityAnalysis2": {
+  "PriorityAnalysis": {
     "assistant_role_name": "Priority Analyst",
     "user_role_name": "Chief Executive Officer",
     "phase_prompt": [
-      "According to the new user's task and some creative brainstorm ideas listed below: ",
+      "The new user's task are listed: ",
       "Task: \"{task}\".",
-      "Parties: \"{parties}\".",
       "As the {assistant_role}, you should write a parties.json file, which can be used to holistically get an idea on the parties interests, agenda, current situation and goals. It serves as a way to document and manage the Parties involved in the argument. For example:",
+      "parties.json",
+      "```",
       "(",
-      "  'Party Identifier': (",
-      "    'Topic of Discussion 1': 'Agenda 1',",
-      "    'Topic of Discussion 2': 'Agenda 2'",
+      "  'Government Agencies': (",
+      "    'Environmental Regulation': 'Implementing stricter pollution controls',",
+      "    'Climate Change Mitigation': 'Developing renewable energy policies'",
       "  ),",
+      "  'NGOs': (",
+      "    'Biodiversity Conservation': 'Protecting endangered species habitats',",
+      "    'Public Awareness and Advocacy': 'Campaigning for climate action'",
+      "  ),",
+      "  'Fossil Fuel Industry': (",
+      "    'Economic Growth': 'Expanding oil and gas exploration',",
+      "    'Regulatory Minimization': 'Lobbying for fewer environmental restrictions'",
+      "  ),",
+      " 'Agricultural Conglomerates': (",
+      "    'Operational Expansion': 'Increasing land for monoculture crops',",
+      "    'Sustainable Practices': 'Implementing water-saving irrigation techniques",
+      "  )",
       ")",
-      "Note that we must ONLY discuss the Party agendas and do not discuss anything else! Once we all have expressed our opinion(s) and agree with the results of the discussion unanimously, any of us must actively terminate the discussion and conclude the most accurate topic and agenda breakdown we have discussed without any other words or reasons, using the format: \"<INFO> *\" where \"*\" represents a json dict."
+      "```",
+      "According to the codes and file format listed above, write a parties.json file to specify the parties participating in the argument."
     ]
   }
 }

@@ -661,10 +661,10 @@ class PartyCreation(Phase):
         log_visualize(
                 "**[Software Info]**:\n\n {}".format(get_info(chat_env.env_dict['directory'], self.log_filepath)))
         # Open the file in read mode ('r')
-        with open('stakeholders.txt', 'r') as file:
-            # Read the entire content of the file into a string
-            file_content = file.read()    
-        chat_env.env_dict['parties'] = file_content
+        # with open('stakeholders.txt', 'r') as file:
+        #     # Read the entire content of the file into a string
+        #     file_content = file.read()    
+        chat_env.env_dict['parties'] = self.seminar_conclusion
         return chat_env
     
 class PriorityAnalysis2(Phase):
