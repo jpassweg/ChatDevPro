@@ -5,6 +5,7 @@ import os
 import shutil
 import time
 from datetime import datetime
+import re
 
 from camel.agents import RolePlaying
 from camel.configs import ChatGPTConfig
@@ -69,10 +70,10 @@ class ChatChain:
         
         # reading in cv, jobpost, and company description
         with open(self.company_path, 'r', encoding='utf8') as file:
-            self.company_description = file.read()
-        self.cv_description = read_pdf(cv_path)
+            self.company_description = "<DOCUMENT_START>" + file.read() + "<DOCUMENT_END>"
+        self.cv_description = "<DOCUMENT_START>" + read_pdf(cv_path) + "<DOCUMENT_END>"
         with open(self.jobpost_path, 'r', encoding='utf8') as file:
-            self.jobpost_description = file.read()
+            self.jobpost_description = "<DOCUMENT_START>" + file.read() + "<DOCUMENT_END>"
 
         # init chatchain config and recruitments
         self.chain = self.config["chain"]

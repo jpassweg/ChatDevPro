@@ -12,6 +12,7 @@
 # limitations under the License.
 # =========== Copyright 2023 @ CAMEL-AI.org. All Rights Reserved. ===========
 import copy
+import re
 from typing import Dict, List, Optional, Sequence, Tuple
 
 from camel.agents import (
@@ -208,8 +209,9 @@ class RolePlaying:
         self.user_agent.update_messages(pseudo_msg)
 
         # here we concatenate to store the real message in the log
+        system_message_content = re.sub(r'<DOCUMENT_START>([\s\S]*?)<DOCUMENT_END>', '<DOCUMENT>', self.assistant_agent.system_message.content)
         log_visualize(self.user_agent.role_name,
-                      "**[Start Chat]**\n\n[" + self.assistant_agent.system_message.content + "]\n\n" + content)
+                      "**[Start Chat]**\n\n[" + system_message_content + "]\n\n" + content)
         return None, user_msg
 
     def process_messages(
