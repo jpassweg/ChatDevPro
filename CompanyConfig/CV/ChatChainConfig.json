@@ -25,7 +25,9 @@
         "Subject Matter Expert AI (SME AI)",
         "Document Analyst AI2",
         "Requirement Analyst AI",
-        "Counselor"
+        "Counselor",
+        "Personal Fit Expert",
+        "Personal Fit Expert2"
     ],
     "clear_structure": "True",
     "gui_design": "False",

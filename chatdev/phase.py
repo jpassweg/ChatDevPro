@@ -679,7 +679,7 @@ class CompanyNeeds(Phase):
                                "company_description": chat_env.env_dict['company_description']})
         
     def update_chat_env(self, chat_env) -> ChatEnv:
-        chat_env.env_dict['company_needs'] = self.seminar_conclusion
+        chat_env.env_dict['soft_skills'] = self.seminar_conclusion
         return chat_env
 
 class InitialAnalysisDiscuss(Phase):
@@ -689,7 +689,7 @@ class InitialAnalysisDiscuss(Phase):
     def update_phase_env(self, chat_env):
         self.phase_env.update({"task": chat_env.env_dict['task_prompt'],
                                "cv_description": chat_env.env_dict['cv_description'],
-                               "company_needs": chat_env.env_dict['company_needs'],
+                               "soft_skills": chat_env.env_dict['soft_skills'],
                                "company_description": chat_env.env_dict['company_description']})
         
     def update_chat_env(self, chat_env) -> ChatEnv:

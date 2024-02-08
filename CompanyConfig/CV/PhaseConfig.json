@@ -1,26 +1,26 @@
 {
   "InitialAnalysisDiscuss": {
-    "assistant_role_name": "Document Analyst AI2",
-    "user_role_name": "Subject Matter Expert AI (SME AI)2",
+    "assistant_role_name": "Personal Fit Expert2",
+    "user_role_name": "Personal Fit Expert",
     "phase_prompt": [
-      "Based on these criteria: ",
+      "Based on these soft Skills: ",
       "**",
-      "{company_needs}",
+      "{soft_skills}",
       "**",
       "How well would this applicant be able to fullful the job: ",
       "{cv_description}",
-      "Note that we must ONLY discuss the Technical aspects of the CV provided and do NOT discuss anything else and the technical fit should be quantified as a number 0-100.",
+      "Note that we must ONLY discuss the CV provided and do NOT discuss anything else. You should not invent anything and base your opinions solely on the provided information. If you are unsure feel free to say so.",
       "Once everyone has expressed their opinion and there is unanumous consensus, AND ONLY THEN, one of us should terminate the discussion by outputting one single line with looking like: <INFO>[Number 0-100]</INFO>"
     ]
   }, 
   "CompanyNeeds": {
-    "assistant_role_name": "Subject Matter Expert AI (SME AI)",
+    "assistant_role_name": "Personal Fit Expert",
     "user_role_name": "Requirement Analyst AI",
     "phase_prompt": [
       "Company: {company_description}",
       "Job: ",
       "{jobpost_description}",
-      "For this information extract a list of technical competences / requirements an applicant needs in order to be a good fit for the Job.",
+      "For this Company and job, deduce a list of interpersonal- or softskills an applicant needs in order to be a good fit for the Job.",
       "Note you should analyze the document and nothing else. Then output the word <INFO> followed by a list of requirements like this:",
       "<INFO>",
       "1. X many years of Y experience", 
