@@ -74,7 +74,7 @@ def log_arguments(func):
             value = escape_string(value)
             records_kv.append([name, value])
         records = f"**[{func.__name__}]**\n\n" + convert_to_markdown_table(records_kv)
-        log_visualize("System", records)
+        #log_visualize("System", records)
 
         return func(*args, **kwargs)
 

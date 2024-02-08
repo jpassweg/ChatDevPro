@@ -383,7 +383,7 @@ then you should return a message in a format like \"<INFO> revised_version_of_th
         assistant_response, user_response = role_play_session.step(input_user_msg, True)
         revised_task_prompt = assistant_response.msg.content.split("<INFO>")[-1].lower().strip()
         log_visualize(role_play_session.assistant_agent.role_name, assistant_response.msg.content)
-        log_visualize(
-            "**[Task Prompt Self Improvement]**\n**Original Task Prompt**: {}\n**Improved Task Prompt**: {}".format(
-                task_prompt, revised_task_prompt))
+        # log_visualize(
+        #     "**[Task Prompt Self Improvement]**\n**Original Task Prompt**: {}\n**Improved Task Prompt**: {}".format(
+        #         task_prompt, revised_task_prompt))
         return revised_task_prompt
