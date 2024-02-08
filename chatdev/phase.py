@@ -655,12 +655,12 @@ class Manual(Phase):
         chat_env.rewrite_manuals()
         return chat_env
     
-class FindRequirements(Phase):
+class FindRequirementsCareer(Phase):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
     def update_phase_env(self, chat_env):
-        self.phase_env.update({})
+        self.phase_env.update({"jobpost_description": chat_env.env_dict['jobpost_description']})
 
     def update_chat_env(self, chat_env) -> ChatEnv:
         if len(self.seminar_conclusion) > 0 and "<INFO>" in self.seminar_conclusion:
@@ -671,12 +671,14 @@ class FindRequirements(Phase):
             chat_env.env_dict['job_requirements'] = "No requirements"
         return chat_env
     
-class EvaluateRequirements(Phase):
+class EvaluateRequirementsCareer(Phase):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
     def update_phase_env(self, chat_env):
-        self.phase_env.update({"job_requirements": chat_env.env_dict['job_requirements']})
+        self.phase_env.update({
+            "job_requirements": chat_env.env_dict['job_requirements'],
+            "cv_description": chat_env.env_dict['cv_description']})
 
     def update_chat_env(self, chat_env) -> ChatEnv:
         if len(self.seminar_conclusion) > 0 and "<INFO>" in self.seminar_conclusion:
@@ -684,5 +686,5 @@ class EvaluateRequirements(Phase):
         elif len(self.seminar_conclusion) > 0:
             chat_env.env_dict['score'] = self.seminar_conclusion
         else:
-            chat_env.env_dict['score'] = "0"
+            chat_env.env_dict['score'] = "-100"
         return chat_env

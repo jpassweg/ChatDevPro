@@ -1,23 +1,27 @@
 {
   
-  "FindRequirements": {
-    "assistant_role_name": "Requirements Finder",
+  "FindRequirementsCareer": {
+    "assistant_role_name": "Requirements Finder Career Path",
     "user_role_name": "Chief Executive Officer",
     "phase_prompt": [
-      "The goal is to find all requirements in the job description.",
+      "The goal is to find the most important career job requirements in the job description.",
       "Note that we must ONLY discuss the requirements described in the job description and do not discuss anything else!",
-      "Once we all have expressed our opinion(s) and agree with the results of the discussion unanimously, any of us must actively terminate the discussion by replying with only one line, which starts with a single word <INFO>, followed by our final list of requirements without any other words, e.g., \"<INFO> CFO experience, English language knowledge\"."
+      "Once we all have expressed our opinion(s) and agree with the results of the discussion unanimously, any of us must actively terminate the discussion by replying with only one line.",
+      "The line starts with a single word <INFO>, followed by our final list of requirements without any other words.",
+      "The job description is: {jobpost_description}"
     ]
   },
 
-  "EvaluateRequirements": {
-    "assistant_role_name": "Requirements Evaluator",
+  "EvaluateRequirementsCareer": {
+    "assistant_role_name": "Requirements Evaluator Career Path",
     "user_role_name": "Chief Executive Officer",
     "phase_prompt": [
-      "The goal is to score the CV.",
+      "The goal is to score the fit of the CV to the job requirements from 1 to 100.",
       "The job requirements are: {job_requirements}",
       "Note that we must ONLY discuss the score and do not discuss anything else!",
-      "Once we all have expressed our opinion(s) and agree with the results of the discussion unanimously, any of us must actively terminate the discussion by replying with only one line, which starts with a single word <INFO>, followed by our final scores without any other words, e.g., \"<INFO> 39 \"."
+      "Once we all have expressed our opinion(s) and agree with the results of the discussion unanimously, any of us must actively terminate the discussion by replying with only one line.",
+      "The line starts with a single word <INFO>, followed by our final score without any other words.",
+      "The cv we are rating is: {cv_description}"
     ]
   }
   

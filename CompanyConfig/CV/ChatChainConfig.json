@@ -1,13 +1,13 @@
 {
     "chain": [
         {
-            "phase": "FindRequirements",
+            "phase": "FindRequirementsCareer",
             "phaseType": "SimplePhase",
             "max_turn_step": 4,
             "need_reflect": "False"
         },
         {
-            "phase": "EvaluateRequirements",
+            "phase": "EvaluateRequirementsCareer",
             "phaseType": "SimplePhase",
             "max_turn_step": 4,
             "need_reflect": "False"
@@ -16,8 +16,8 @@
     "recruitments": [
         "Chief Executive Officer",
         "Counselor",
-        "Requirements Finder",
-        "Requirements Evaluator"
+        "Requirements Finder Career Path",
+        "Requirements Evaluator Career Path"
     ],
     "clear_structure": "True",
     "gui_design": "False",
