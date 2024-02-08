@@ -4,7 +4,7 @@
     "assistant_role_name": "Requirements Finder Career Path",
     "user_role_name": "Chief Executive Officer",
     "phase_prompt": [
-      "The goal is to find the most important career job requirements in the job description.",
+      "The goal is to find the most important 5 career job requirements in the job description.",
       "Note that we must ONLY discuss the requirements described in the job description and do not discuss anything else!",
       "Once we all have expressed our opinion(s) and agree with the results of the discussion unanimously, any of us must actively terminate the discussion by replying with only one line.",
       "The line starts with a single word <INFO>, followed by our final list of requirements without any other words.",
