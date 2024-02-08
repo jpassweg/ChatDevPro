@@ -669,18 +669,29 @@ class FindRequirements(Phase):
             chat_env.env_dict['job_requirements'] = "No requirements"
         return chat_env
     
-class EvaluateRequirements(Phase):
+class CompanyNeeds(Phase):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
     def update_phase_env(self, chat_env):
-        self.phase_env.update({"job_requirements": chat_env.env_dict['job_requirements']})
-
+        self.phase_env.update({"task": chat_env.env_dict['task_prompt'],
+                               "jobpost_description": chat_env.env_dict['jobpost_description'],
+                               "company_description": chat_env.env_dict['company_description']})
+        
     def update_chat_env(self, chat_env) -> ChatEnv:
-        if len(self.seminar_conclusion) > 0 and "<INFO>" in self.seminar_conclusion:
-            chat_env.env_dict['score'] = self.seminar_conclusion.split("<INFO>")[-1]
-        elif len(self.seminar_conclusion) > 0:
-            chat_env.env_dict['score'] = self.seminar_conclusion
-        else:
-            chat_env.env_dict['score'] = "0"
+        chat_env.env_dict['company_needs'] = self.seminar_conclusion
+        return chat_env
+
+class InitialAnalysisDiscuss(Phase):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def update_phase_env(self, chat_env):
+        self.phase_env.update({"task": chat_env.env_dict['task_prompt'],
+                               "cv_description": chat_env.env_dict['cv_description'],
+                               "company_needs": chat_env.env_dict['company_needs'],
+                               "company_description": chat_env.env_dict['company_description']})
+        
+    def update_chat_env(self, chat_env) -> ChatEnv:
+        chat_env.env_dict['tech_analysis'] = self.seminar_conclusion
         return chat_env

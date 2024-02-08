@@ -1,25 +1,30 @@
 {
-  
-  "FindRequirements": {
-    "assistant_role_name": "Requirements Finder",
-    "user_role_name": "Chief Executive Officer",
+  "InitialAnalysisDiscuss": {
+    "assistant_role_name": "Document Analyst AI2",
+    "user_role_name": "Subject Matter Expert AI (SME AI)2",
     "phase_prompt": [
-      "The goal is to find all requirements in the job description.",
-      "Note that we must ONLY discuss the requirements described in the job description and do not discuss anything else!",
-      "Once we all have expressed our opinion(s) and agree with the results of the discussion unanimously, any of us must actively terminate the discussion by replying with only one line, which starts with a single word <INFO>, followed by our final list of requirements without any other words, e.g., \"<INFO> CFO experience, English language knowledge\"."
+      "Based on these criteria: ",
+      "{company_needs}",
+      "How well would this applicant be able to fullful the job: ",
+      "{cv_description}",
+      "Note that we must ONLY discuss the Technical aspects of the CV provided and do NOT discuss anything else and the technical fit should be quantified as a number 0-100.",
+      "Once everyone has expressed their opinion and there is unanumous consensus, AND ONLY THEN, one of us should terminate the discussion by outputting one single line with looking like: <INFO>[Number 0-100]</INFO>"
     ]
-  },
-
-  "EvaluateRequirements": {
-    "assistant_role_name": "Requirements Evaluator",
-    "user_role_name": "Chief Executive Officer",
+  }, 
+  "CompanyNeeds": {
+    "assistant_role_name": "Subject Matter Expert AI (SME AI)",
+    "user_role_name": "Requirement Analyst AI",
     "phase_prompt": [
-      "The goal is to score the CV.",
-      "The job requirements are: {job_requirements}",
-      "Note that we must ONLY discuss the score and do not discuss anything else!",
-      "Once we all have expressed our opinion(s) and agree with the results of the discussion unanimously, any of us must actively terminate the discussion by replying with only one line, which starts with a single word <INFO>, followed by our final scores without any other words, e.g., \"<INFO> 39 \"."
+      "Company: {company_description}",
+      "Job: ",
+      "{jobpost_description}",
+      "For this information extract a list of technical competences / requirements an applicant needs in order to be a good fit for the Job.",
+      "Note you should analyze the document and nothing else. Then output the word <INFO> followed by a list of requirements like this:",
+      "<INFO>",
+      "1. X many years of Y experience", 
+      "2. Proficient in Z technologs",
+      " etc..."
     ]
   }
-  
 }
 
