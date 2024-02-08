@@ -8,6 +8,7 @@ import openai
 from openai import OpenAI
 import numpy as np
 import os
+import re
 from abc import ABC, abstractmethod
 import tiktoken
 from typing import Any, Dict
@@ -172,5 +173,5 @@ def now():
 
 def log_and_print_online(content=None):
     if  content is not None:
-        print(content)
-        logging.info(content)
+        print(re.sub(r'<DOCUMENT_START>([\s\S]*?)<DOCUMENT_END>', '<DOCUMENT>', str(content)))
+        logging.info(re.sub(r'<DOCUMENT_START>([\s\S]*?)<DOCUMENT_END>', '<DOCUMENT>', str(content)))

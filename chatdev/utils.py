@@ -29,8 +29,8 @@ def log_visualize(role, content=None):
         send_msg("System", role)
         print(role + "\n")
     else:
-        print(str(role) + ": " + str(content) + "\n")
-        logging.info(str(role) + ": " + str(content) + "\n")
+        print(str(role) + ": " + re.sub(r'<DOCUMENT_START>([\s\S]*?)<DOCUMENT_END>', '<DOCUMENT>', str(content)) + "\n")
+        logging.info(str(role) + ": " + re.sub(r'<DOCUMENT_START>([\s\S]*?)<DOCUMENT_END>', '<DOCUMENT>', str(content)) + "\n")
         if isinstance(content, SystemMessage):
             records_kv = []
             content.meta_dict["content"] = content.content
@@ -41,7 +41,7 @@ def log_visualize(role, content=None):
             content = "**[SystemMessage**]\n\n" + convert_to_markdown_table(records_kv)
         else:
             role = str(role)
-            content = str(content)
+            content = re.sub(r'<DOCUMENT_START>([\s\S]*?)<DOCUMENT_END>', '<DOCUMENT>', str(content))
         send_msg(role, content)
 
 
