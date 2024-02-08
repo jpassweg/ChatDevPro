@@ -1,29 +1,23 @@
 {
     "chain": [
         {
-            "phase": "PartyCreation",
-            "phaseType": "ComposedPhase",
-            "cycleNum": 1,
-            "Composition": [{
-                    "phase": "InitialAnalysis",
-                    "phaseType": "SimplePhase",
-                    "max_turn_step": 5,
-                    "need_reflect": "False"
-                }
-            ]
+            "phase": "FindRequirements",
+            "phaseType": "SimplePhase",
+            "max_turn_step": 4,
+            "need_reflect": "False"
         },
         {
-            "phase": "TeamFitAndPersonalityEvaluation",
+            "phase": "EvaluateRequirements",
             "phaseType": "SimplePhase",
-            "max_turn_step": 3,
+            "max_turn_step": 4,
             "need_reflect": "False"
         }
     ],
     "recruitments": [
         "Chief Executive Officer",
-        "Subject Matter Expert AI (SME AI)",
-        "Document Analyst AI",
-        "Cultural Fit Analyst AI"
+        "Counselor",
+        "Requirements Finder",
+        "Requirements Evaluator"
     ],
     "clear_structure": "True",
     "gui_design": "False",
