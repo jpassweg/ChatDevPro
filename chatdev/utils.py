@@ -41,7 +41,7 @@ def log_visualize(role, content=None):
             content = "**[SystemMessage**]\n\n" + convert_to_markdown_table(records_kv)
         else:
             role = str(role)
-            content = re.sub(r'<DOCUMENT_START>([\s\S]*?)<DOCUMENT_END>', '<DOCUMENT>', str(content))
+            content = str(content)
         send_msg(role, content)
 
 

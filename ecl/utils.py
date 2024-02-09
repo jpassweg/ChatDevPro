@@ -174,4 +174,4 @@ def now():
 def log_and_print_online(content=None):
     if  content is not None:
         print(re.sub(r'<DOCUMENT_START>([\s\S]*?)<DOCUMENT_END>', '<DOCUMENT>', str(content)))
-        logging.info(re.sub(r'<DOCUMENT_START>([\s\S]*?)<DOCUMENT_END>', '<DOCUMENT>', str(content)))
+        logging.info(str(content)) # logging.info(re.sub(r'<DOCUMENT_START>([\s\S]*?)<DOCUMENT_END>', '<DOCUMENT>', str(content)))
