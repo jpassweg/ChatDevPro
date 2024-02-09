@@ -14,6 +14,10 @@ This document outlines the current state and future development plans for our re
 
 ## Planned Developments
 
+### Personal Fit Bot
+- **Objective:** Evaluate candidates' personal attributes to determine cultural and team compatibility.
+- **Plan:** Extend the functionality with the possibility to hand in a cover letter as well, based upon which the personal fit can be determined.
+
 ### Company-Specific Requirement Bots
 - **Objective:** Develop bots that rate candidates according to specific company needs and job requirements. Customization can account for gender, ethnicities, or other diversity concerns.
 - **Plan:** Customize evaluation criteria based on a detailed analysis of company values, job roles, and industry standards. Add the possibility to hard-code certain quotas given by companies.
