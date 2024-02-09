@@ -23,8 +23,9 @@
       "For this Company and job, deduce a list of interpersonal- or softskills an applicant needs in order to be a good fit for the Job.",
       "Note you should analyze the document and nothing else. Then output the word <INFO> followed by a list of requirements like this:",
       "<INFO>",
-      "1. X many years of Y experience", 
-      "2. Proficient in Z technologs",
+      "1. Team player", 
+      "2. Has leadership qualities",
+      "3. Creativity",
       " etc..."
     ]
   }
