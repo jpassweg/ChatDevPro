@@ -112,6 +112,7 @@ parser.add_argument('--model', type=str, default="GPT_3_5_TURBO",
                     help="GPT Model, choose from {'GPT_3_5_TURBO','GPT_4','GPT_4_32K', 'GPT_4_TURBO'}")
 parser.add_argument('--path', type=str, default="",
                     help="Your file directory, ChatDev will build upon your software in the Incremental mode")
+# For CV mode
 parser.add_argument('--cv_path', type=str, default="default",
                     help="The directory in which the cv, jobpost and company description is stored")
 args = parser.parse_args()
@@ -140,6 +141,7 @@ chat_chain = ChatChain(config_path=config_path,
                        org_name=args.org,
                        model_type=args2type[args.model],
                        code_path=args.path,
+                       # CV mode
                        company_path=company_path, 
                        cv_path=cv_path, 
                        jobpost_path=jobpost_path)
